@@ -1,0 +1,15 @@
+{
+  "name": "integration_test_ci_cd",
+  "version": "1.0.0",
+  "description": "testing basic express server using newman",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
+  },
+  "author": "Parth Kalekar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
