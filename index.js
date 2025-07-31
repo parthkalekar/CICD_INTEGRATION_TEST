@@ -19,7 +19,6 @@ app.post("/users", (req,res) => {
 })
 
 app.get("/users/:id", (req,res) => {
-    console.log(typeof req.params.id);
     const user = users.find(user => user.id === Number(req.params.id));
     if(!user) return res.status(404).json({message:"User not found !"})
     res.json(user);
