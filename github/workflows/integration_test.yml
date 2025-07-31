@@ -1,0 +1,32 @@
+name: Node.js API Integration Tests
+
+on:
+  push:
+    branches: 
+      - main
+  
+jobs:
+  integration-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install PM2
+        run: npm install -g pm2
+
+      - name: Start Express server with PM2
+        run: pm2 start server.js
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run Postman integration tests
+        run: newman run user-api.postman_collection.json
