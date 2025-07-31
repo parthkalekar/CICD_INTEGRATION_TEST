@@ -28,7 +28,7 @@ jobs:
               run: pm2 start index.js
 
             - name: Install K6 
-              run: sudo apt update && sudo apt install -y k6
+              run:  sudo snap install k6
 
             - name: Run Performance Tests
               run: k6 run ./tests/performance-test.js
